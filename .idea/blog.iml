@@ -63,8 +63,6 @@
     <orderEntry type="library" scope="PROVIDED" name="ed25519 (v1.4.0, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erb (v5.0.1, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.13.1, ruby-3.4.1-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="et-orbi (v1.2.11, ruby-3.4.1-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fugit (v1.11.1, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v1.2.1, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.14.7, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="importmap-rails (v2.1.0, ruby-3.4.1-p0) [gem]" level="application" />
@@ -104,7 +102,6 @@
     <orderEntry type="library" scope="PROVIDED" name="psych (v5.2.6, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v6.0.2, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v6.6.0, ruby-3.4.1-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="raabro (v1.4.0, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.8.1, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v3.1.16, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-session (v2.1.1, ruby-3.4.1-p0) [gem]" level="application" />
@@ -130,9 +127,6 @@
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.4.1, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.4.1, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.33.0, ruby-3.4.1-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="solid_cable (v3.0.10, ruby-3.4.1-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="solid_cache (v1.0.7, ruby-3.4.1-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="solid_queue (v1.1.5, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sshkit (v1.24.0, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.3.4, ruby-3.4.1-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.7, ruby-3.4.1-p0) [gem]" level="application" />
@@ -176,6 +170,9 @@
         <option value="devise:install" />
         <option value="devise:views" />
         <option value="erb:authentication" />
+        <option value="erb:controller" />
+        <option value="erb:mailer" />
+        <option value="erb:scaffold" />
         <option value="generator" />
         <option value="helper" />
         <option value="integration_test" />
@@ -192,10 +189,6 @@
         <option value="scaffold" />
         <option value="scaffold_controller" />
         <option value="script" />
-        <option value="solid_cable:install" />
-        <option value="solid_cable:update" />
-        <option value="solid_cache:install" />
-        <option value="solid_queue:install" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />
@@ -222,6 +215,9 @@
         <option value="devise:install" />
         <option value="devise:views" />
         <option value="erb:authentication" />
+        <option value="erb:controller" />
+        <option value="erb:mailer" />
+        <option value="erb:scaffold" />
         <option value="generator" />
         <option value="helper" />
         <option value="integration_test" />
@@ -238,10 +234,6 @@
         <option value="scaffold" />
         <option value="scaffold_controller" />
         <option value="script" />
-        <option value="solid_cable:install" />
-        <option value="solid_cable:update" />
-        <option value="solid_cache:install" />
-        <option value="solid_queue:install" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />
@@ -537,23 +529,6 @@
           <RakeTaskImpl id="log">
             <subtasks>
               <RakeTaskImpl description="Truncate all/specified *.log files in log/ to zero bytes (specify which logs with LOGS=test,development)" fullCommand="log:clear" id="clear" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="solid_cable">
-            <subtasks>
-              <RakeTaskImpl description="Copy over the schema and set cable adapter for Solid Cable" fullCommand="solid_cable:install" id="install" />
-              <RakeTaskImpl description="" fullCommand="solid_cable:update" id="update" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="solid_cache">
-            <subtasks>
-              <RakeTaskImpl description="Copy over the migration, and set cache" fullCommand="solid_cache:install" id="install" />
-            </subtasks>
-          </RakeTaskImpl>
-          <RakeTaskImpl id="solid_queue">
-            <subtasks>
-              <RakeTaskImpl description="Install Solid Queue" fullCommand="solid_queue:install" id="install" />
-              <RakeTaskImpl description="start solid_queue supervisor to dispatch and process jobs" fullCommand="solid_queue:start" id="start" />
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl description="Report code statistics (KLOCs, etc) from the application or engine" fullCommand="stats" id="stats" />
