@@ -87,17 +87,26 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: blog_production
-  username: blog
-  password: <%= ENV["BLOG_DATABASE_PASSWORD"] %>
-  host: your_db_host
-  port: 5432
-#production:
-#  <<: *default
-#  url: <%= ENV['DATABASE_URL'] %>
-#  pool: 5
-#
-#  cable:
-#    <<: *default
-#    url: <%= ENV['DATABASE_URL'] %>
+  primary:
+    <<: *default
+    database: blog_production
+    username: blog
+    password: <%= ENV["BLOG_DATABASE_PASSWORD"] %>
+
+  cache:
+    <<: *default
+    database: blog_production_cache
+    username: blog
+    password: <%= ENV["BLOG_DATABASE_PASSWORD"] %>
+
+  queue:
+    <<: *default
+    database: blog_production_queue
+    username: blog
+    password: <%= ENV["BLOG_DATABASE_PASSWORD"] %>
+
+  cable:
+    <<: *default
+    database: blog_production_cable
+    username: blog
+    password: <%= ENV["BLOG_DATABASE_PASSWORD"] %>
