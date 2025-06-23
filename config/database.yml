@@ -112,6 +112,4 @@ production:
 
   cable:
     <<: *default
-    database: blog_production_cable
-    username: blog
-    password: <%= ENV["BLOG_DATABASE_PASSWORD"] %>
+    url: <%= ENV['DATABASE_URL'] %>
