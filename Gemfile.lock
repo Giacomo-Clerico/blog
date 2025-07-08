@@ -113,6 +113,7 @@ GEM
     ed25519 (1.4.0)
     erb (5.0.1)
     erubi (1.13.1)
+    fiddle (1.1.8)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.7)
@@ -342,6 +343,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
+  fiddle
   importmap-rails
   jbuilder
   kamal
